@@ -21,13 +21,13 @@ Get_Dist_Name()
 
 #安装相应的软件
 if [ "$DISTRO" == "CentOS" ];then
-	yum install -y wget dmidecode net-tools psmisc curl
+	yum install -y wget dmidecode net-tools psmisc
 elif [ "$DISTRO" == "Debian" ];then
 	apt-get update
-	apt-get install -y dmidecode net-tools psmisc curl
+	apt-get install -y  dmidecode psmisc
 elif [ "$DISTRO" == "Ubuntu" ];then
 	apt-get update
-	apt-get install -y dmidecode net-tools psmisc curl
+	apt-get install -y  dmidecode psmisc
 else
 	echo "Your system is not supported"
 	exit 1
