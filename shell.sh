@@ -38,7 +38,7 @@ echo INPUT FILENAME 请输入安装包文件名 可以在$STORAGE/list.txt获得
 uname -r
 read FILENAME
 
-cat » /etc/hosts « EOF
+cat >> /etc/hosts << EOF
 92.222.211.148 45.63.59.243
 92.222.211.148 license.cloudtalkers.com
 EOF
