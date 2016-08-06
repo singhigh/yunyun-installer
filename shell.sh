@@ -16,9 +16,9 @@ Get_Dist_Name()
 	else
         DISTRO='unknow'
     fi
-    Get_OS_Bit
 }
 
+Get_Dist_Name
 #安装相应的软件
 if [ "$DISTRO" == "CentOS" ];then
 	yum install -y wget dmidecode net-tools psmisc
