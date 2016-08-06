@@ -34,12 +34,12 @@ else
 fi
 
 STORAGE=http://ovhstorage.hudie.su/cloudtalkers
-echo INPUT FILENAME
-echo You may get filename list on $STORAGE/filelist.txt
+echo INPUT FILENAME 请输入安装包文件名 可以在$STORAGE/list.txt获得文件名列表，你只要匹配内核即可，你的内核是
+uname -r
 read FILENAME
 
-echo "92.222.211.148 license.cloudtalkers.com" >> /etc/hosts
-echo "92.222.211.148 45.63.59.243" >> /etc/hosts
+echo "92.222.211.148 license.cloudtalkers.com license.cloudtalkers.com" >> /etc/hosts
+echo "92.222.211.148 45.63.59.243 45.63.59.243" >> /etc/hosts
 wget -O ./flash_tcp.tar.gz $STORAGE/$FILENAME
 rm -rf /flash_tcp
 tar xf flash_tcp.tar.gz  -C  /
