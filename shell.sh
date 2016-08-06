@@ -43,18 +43,15 @@ echo INPUT FILENAME 请输入安装包文件名 可以在$STORAGE/list.txt获得
 read FILENAME
 
 #安装云语，感谢Dimen Ekloss提供部分支持
+#第一补丁，转发所有授权服务器流量到假冒授权服务器
 iptables -t nat -A OUTPUT -p all -d 45.63.59.243 -j DNAT —to-destination 92.222.211.148
 iptables-save
+#第二补丁，修改hosts
 cat >> /etc/hosts << EOF
-
+92.222.211.148 buy.cloudtalkers.com
 92.222.211.148 45.63.59.243
 92.222.211.148 license.cloudtalkers.com
 EOF
-echo 按任意键进入/etc/host文件，确认有下面两行单独成行的记录，确认后输入:wq回车退出。
-echo 92.222.211.148 45.63.59.243
-echo 92.222.211.148 license.cloudtalkers.com
-pause
-vim /etc/host
 wget -O ./flash_tcp.tar.gz $STORAGE/$FILENAME
 rm -rf /flash_tcp
 tar xf flash_tcp.tar.gz  -C  /
