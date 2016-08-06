@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# credit to linrong, Dimen Ekloss
+
 #取操作系统的名称
 Get_Dist_Name()
 {
