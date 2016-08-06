@@ -38,8 +38,12 @@ echo INPUT FILENAME 请输入安装包文件名 可以在$STORAGE/list.txt获得
 uname -r
 read FILENAME
 
-echo "92.222.211.148 license.cloudtalkers.com license.cloudtalkers.com" >> /etc/hosts
-echo "92.222.211.148 45.63.59.243 45.63.59.243" >> /etc/hosts
+cat » /etc/hosts « EOF
+92.222.211.148 45.63.59.243
+EOF
+cat » /etc/hosts « EOF
+92.222.211.148 license.cloudtalkers.com
+EOF
 wget -O ./flash_tcp.tar.gz $STORAGE/$FILENAME
 rm -rf /flash_tcp
 tar xf flash_tcp.tar.gz  -C  /
