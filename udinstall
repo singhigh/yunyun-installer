@@ -1,0 +1,44 @@
+#!/bin/bash
+
+#存储服务器地址
+STORAGE=http://ovhstorage.hudie.su/cloudtalkers/
+
+#取操作系统的名称
+Get_Dist_Name()
+{
+    if grep -Eqi "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
+        DISTRO='CentOS'
+        PM='yum'
+    elif grep -Eqi "Debian" /etc/issue || grep -Eq "Debian" /etc/*-release; then
+        DISTRO='Debian'
+        PM='apt'
+    elif grep -Eqi "Ubuntu" /etc/issue || grep -Eq "Ubuntu" /etc/*-release; then
+        DISTRO='Ubuntu'
+        PM='apt'		
+	else
+        DISTRO='unknow'
+    fi
+    Get_OS_Bit
+}
+
+#安装相应的软件
+if [ "$DISTRO" == "CentOS" ];then
+	yum install -y wget dmidecode net-tools psmisc
+elif [ "$DISTRO" == "Debian" ];then
+	apt-get update
+	apt-get install -y wget dmidecode net-tools psmisc
+elif [ "$DISTRO" == "Ubuntu" ];then
+	apt-get update
+	apt-get install -y wget dmidecode net-tools psmisc
+else
+	echo "Cloudtalkers supports CentOS, Debian and Ubuntu ONLY, your current system is not supported, script exit now."
+	exit 1
+fi
+
+#写入hosts
+echo "92.222.211.148 license.cloudtalkers.com" >> /etc/hosts
+echo "92.222.211.148 45.63.59.243" >> /etc/hosts
+
+#获取安装包
+curl "$STORAGE?filename"
+
