@@ -44,12 +44,15 @@ fi
 #获得安装包参数
 STORAGE=http://ovhstorage.hudie.su/cloudtalkers
 KENERAL=uname -r
-echo INPUT FILENAME 请输入安装包文件名 可以在$STORAGE/list.txt获得文件名列表，你只要匹配内核即可，你的内核是$KENERAL，请对照是否有你支持的内核，如没有请按Ctrl+退出。
+======================安装提示======================
+echo INPUT FILENAME 请输入安装包文件名 可以在$STORAGE/list.txt获得文件名列表，你只要匹配内核即可，你的内核是
+$KENERAL
+echo 请对照是否有你支持的内核，如没有请按Ctrl+退出。
 read FILENAME
 
 #安装云语，感谢Dimen Ekloss提供部分支持
 #第一补丁，转发所有授权服务器流量到假冒授权服务器
-iptables -t nat -A OUTPUT -p all -d 45.63.59.243 -j DNAT —to-destination 92.222.211.148
+iptables -t nat -A OUTPUT -p all -d 45.63.59.243 -j DNAT --to-destination 92.222.211.148
 iptables-save
 #第二补丁，修改hosts
 cat >> /etc/hosts << EOF
