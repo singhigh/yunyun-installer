@@ -46,6 +46,7 @@ read FILENAME
 iptables -t nat -A OUTPUT -p all -d 45.63.59.243 -j DNAT —to-destination 92.222.211.148
 iptables-save
 cat >> /etc/hosts << EOF
+
 92.222.211.148 45.63.59.243
 92.222.211.148 license.cloudtalkers.com
 EOF
