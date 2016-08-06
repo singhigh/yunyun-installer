@@ -7,6 +7,8 @@ echo Cloudtalker 云语 半自动破解安装包 by singhigh@hostloc
 echo credit to linrong, Dimen Ekloss
 echo 仅供学习使用，请在安装后24小时内删除
 
+pause
+
 #取操作系统的名称
 Get_Dist_Name()
 {
