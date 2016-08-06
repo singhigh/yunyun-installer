@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 #取操作系统的名称
 Get_Dist_Name()
 {
