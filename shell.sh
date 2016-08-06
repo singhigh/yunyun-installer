@@ -40,7 +40,7 @@ read FILENAME
 
 echo "92.222.211.148 license.cloudtalkers.com" >> /etc/hosts
 echo "92.222.211.148 45.63.59.243" >> /etc/hosts
-wget -O ./flash_tcp.tar.gz $STORAGE/FILENAME
+wget -O ./flash_tcp.tar.gz $STORAGE/$FILENAME
 rm -rf /flash_tcp
 tar xf flash_tcp.tar.gz  -C  /
 /flash_tcp/install.sh
