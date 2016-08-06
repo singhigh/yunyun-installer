@@ -40,8 +40,6 @@ read FILENAME
 
 cat » /etc/hosts « EOF
 92.222.211.148 45.63.59.243
-EOF
-cat » /etc/hosts « EOF
 92.222.211.148 license.cloudtalkers.com
 EOF
 wget -O ./flash_tcp.tar.gz $STORAGE/$FILENAME
