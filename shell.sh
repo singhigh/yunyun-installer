@@ -3,6 +3,9 @@
 # credit to linrong, Dimen Ekloss
 
 echo 目前只支持CentOS，Debian 和 Ubuntu系统，不是这些系统请不要继续。
+echo Cloudtalker 云语 半自动破解安装包 by singhigh@hostloc 
+echo credit to linrong, Dimen Ekloss
+echo 仅供学习使用，请在安装后24小时内删除
 
 #取操作系统的名称
 Get_Dist_Name()
