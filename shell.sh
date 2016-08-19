@@ -46,7 +46,7 @@ STORAGE=http://ovhstorage.hudie.su/cloudtalkers
 KENERAL=uname -r
 ======================安装提示======================
 echo INPUT FILENAME 请输入安装包文件名 可以在$STORAGE/list.txt获得文件名列表，你只要匹配内核即可，你的内核是
-$KENERAL
+echo $KENERAL
 echo 请对照是否有你支持的内核，如没有请按Ctrl+退出。
 read FILENAME
 
